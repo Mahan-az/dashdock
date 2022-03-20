@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="active">
+                    <i class="far fa-user "></i>
+                </li>
+                <li>
+                    <i class="far fa-bell"></i>
+                </li>
+                <li>
+                    <i class="far fa-comment"></i>
+                </li>
+                <li>
+                    <i class="far fa-envelope"></i>
+                </li>
+            </ul>
+            <div class="tubelight">
+                <div class="light-ray"></div>
+            </div>
+</nav>
+    <script>
+        const items = document.querySelectorAll("nav ul li");
+        const light = document.querySelector("nav .tubelight");
+        items.forEach(item => {
+            item.addEventListener("click" , () =>{
+                items.forEach(i => {i.classList.remove("active")});
+                item.classList.add("active")
+                light.style.left = `${item.offsetLeft + light.offsetWidth / 4}px`;
+            })
+        });
+    </script>
+    </body>
+</html>
